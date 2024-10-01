@@ -6,7 +6,7 @@
       <li>© github-proxy All rights reserved.</li>
       <li>
         Github Project :
-        <a href="https://github.com/7836246/github-proxy" target="_blank"
+        <a href="https://github.com/7836246/Github-Proxy" target="_blank"
           >7836246/github-proxy</a
         >
       </li>

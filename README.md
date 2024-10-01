@@ -16,8 +16,8 @@
 首先，克隆该项目并安装依赖：
 
 ```bash
-git clone https://github.com/yourusername/github-proxy-nuxt3.git
-cd github-proxy-nuxt3
+git clone https://github.com/7836246/Github-Proxy
+cd Github-Proxy
 npm install
 ```
 

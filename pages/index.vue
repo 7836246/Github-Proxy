@@ -70,7 +70,7 @@ useSeoMeta({
             >
             申请 Token 配合使用. <br /><b>git clone</b>
             <span class="red-text">https://</span><b>user:your_token</b
-            ><span class="red-text">@ghp.ci/</span
+            ><span class="red-text">@域名/</span
             ><span class="green-text"
               >https://github.com/your_name/your_private_repo</span
             >

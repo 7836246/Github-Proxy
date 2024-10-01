@@ -33,27 +33,40 @@ const { data: menuData } = await useFetch("/api/menu");
 
 <template>
   <!-- 手机端菜单按钮 -->
-  <div id="navButton"><a class="toggle" @click="toggleMenu"></a></div>
+  <div
+    id="navButton"
+    @click="toggleMenu"
+    class="fixed top-5 left-6 w-16 h-16 flex items-center justify-center rounded-full cursor-pointer z-50 transition-all duration-300 transform"
+    :class="isMenuVisible ? 'translate-x-70' : 'translate-x-0'"
+  >
+    <IconMenu :size="32" class="text-4xl ml-1" />
+  </div>
+
   <!-- 抽屉菜单 -->
   <div
-    v-if="isMenuVisible"
-    class="fixed top-0 left-0 h-full bg-gray-800 text-white z-40 w-64 p-6 transform transition-transform duration-300"
-    :class="isMenuVisible ? 'translate-x-0' : '-translate-x-full'"
+    id="navPanel"
+    :style="{
+      transform: isMenuVisible ? 'translateX(0)' : 'translateX(-275px)',
+      transition: 'transform 0.3s ease-in-out',
+    }"
   >
-    <nav class="space-y-4 mt-5">
+    <nav v-for="{ name, url } in menuData.mainMenu">
       <NuxtLink
-        v-for="{ name, url } in menuData.mainMenu"
         :to="url"
-        class="block text-lg font-bold router-link-active router-link-exact-active"
-        >{{ name }}
+        target="_blank"
+        class="link depth-0"
+        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0)"
+        ><span class="indent-0"></span>{{ name }}
       </NuxtLink>
-      <ul class="pl-4 space-y-2" v-if="menuData.isDropdown">
-        <li v-for="item in menuData.subMenu" :key="item.name">
-          <a :href="item.url" target="_blank" class="block text-base">{{
-            item.name
-          }}</a>
-        </li>
-      </ul>
+    </nav>
+    <nav v-for="item in menuData.subMenu" :key="item.name">
+      <NuxtLink
+        :to="item.url"
+        target="_blank"
+        class="link depth-1"
+        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0)"
+        ><span class="indent-1"></span>{{ item.name }}
+      </NuxtLink>
     </nav>
   </div>
 

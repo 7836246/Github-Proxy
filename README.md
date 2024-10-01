@@ -75,4 +75,8 @@ MIT License
 
 ## 说明
 
-所有样式均来自于https://ghp.ci/(如果疑问 可联系本站删除)
+本项目基于 [gh-proxy](https://github.com/hunshcn/gh-proxy) 项目，并借鉴了其样式和功能。
+
+### 致谢
+
+本项目中的所有样式和功能均来自于 [ghp.ci](https://ghp.ci/)。如有疑问或需要删除相关内容，请联系本站。
